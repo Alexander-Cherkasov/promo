@@ -42,39 +42,17 @@
 .container-m-t {
   margin-top: 65px;
 }
-#slider-2 .container-slider__title,
-#slider-2 a {
-  mix-blend-mode: initial;
-  color: black;
-}
 #slider-5 .container-slider__title,
 #slider-5 a {
   color: white;
 }
 .main.hidden {
-  /* height: 0vh !important;
-  margin-top: 0 !important;
-  opacity: 0 !important; */
   height: 0 !important; /* Принудительно установить высоту */
   opacity: 0;
   overflow: hidden;
   margin: 0; /* Сбросить любые отступы */
   padding: 0; /* Сбросить любые отступы */
 }
-/* .main-content {
-  height: calc(100vh - 65px);
-  width: 100vw;
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  right: 0;
-  margin: auto;
-  margin-top: 65px;
-} */
 .main__title {
   position: absolute;
   left: 0;

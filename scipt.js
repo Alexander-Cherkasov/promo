@@ -7,7 +7,7 @@ $(document).ready(function () {
   // Инициализация slick-слайдера
   const initializeSlick = () => {
     $(".container-slider__items").slick({
-      infinite: true,
+      infinite: false,
       speed: 400,
     });
   };
