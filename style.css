@@ -139,7 +139,7 @@
   height: calc(100vh - 65px);
 } */
 .header {
-  padding: 18px 64px 17px 24px;
+  padding: 18px 2.08vw 17px 0.78vw;
   background: #ffffff;
   height: 65px;
   position: fixed;
@@ -154,7 +154,7 @@
 .header nav ul {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 62px;
+  gap: 2.02vw;
 }
 .header nav ul div {
   display: flex;
@@ -180,7 +180,7 @@
   text-transform: uppercase;
 }
 a.header__link.header__link_project {
-  margin-left: 31px;
+  margin-left: 1.01vw;
 }
 .header__li_about {
   flex: 0 0 59%;
