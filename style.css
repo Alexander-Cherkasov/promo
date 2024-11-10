@@ -1,8 +1,8 @@
 @font-face {
   font-family: "favorit";
-  src: url("/font/ABCFavoritCYR-Regular-Trial.otf") format("opentype"),
-    url("/font/ABCFavoritCYR-Regular-Trial.woff") format("woff"),
-    url("/font/ABCFavoritCYR-Regular-Trial.woff2") format("woff2");
+  src: url("./font/ABCFavoritCYR-Regular-Trial.otf") format("opentype"),
+    url("./font/ABCFavoritCYR-Regular-Trial.woff") format("woff"),
+    url("./font/ABCFavoritCYR-Regular-Trial.woff2") format("woff2");
   font-style: normal;
   font-weight: normal;
 }
