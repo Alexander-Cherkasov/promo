@@ -158,7 +158,7 @@
 }
 .header nav ul div {
   display: flex;
-  gap: 25%;
+  gap: 9.02vw;
 }
 .language-btns {
   display: flex;
