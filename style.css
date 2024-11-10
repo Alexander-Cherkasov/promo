@@ -170,7 +170,7 @@
 }
 .header__link,
 .logo {
-  font-size: 25px;
+  font-size: 0.81vw;
   line-height: 30px;
   color: #000000;
   text-decoration: none;
@@ -193,7 +193,7 @@ a.header__link.header__link_project {
   justify-content: end;
 }
 .language-btn {
-  font-size: 25px;
+  font-size: 0.81vw;
   line-height: 30px;
   color: #b4b4b4;
   text-decoration: none;
