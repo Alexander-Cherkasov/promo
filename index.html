@@ -3,7 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';">
+    <!-- <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self' 'nonce-uniqueNonce123' https://trusted-source.com https://player.vimeo.com; frame-src 'self' https://player.vimeo.com; child-src 'self' https://player.vimeo.com;"
+    /> -->
+    <!-- Остальные теги -->
+
     <link rel="stylesheet" href="./style.css" />
     <link rel="stylesheet" href="./slick/slick/slick-theme.css" />
     <link rel="stylesheet" href="./slick/slick/slick.css" />
@@ -42,15 +47,22 @@
     <div class="main">
       <div class="main-content">
         <div class="video-container">
-          <iframe src="https://player.vimeo.com/video/1028950325?background=1" frameborder="0" allowfullscreen  title="" sandbox="allow-same-origin allow-scripts allow-pointer-lock allow-forms allow-popups"></iframe>
+          <iframe
+            class="vimeo-video"
+            src="https://player.vimeo.com/video/951855032?background=1"
+            frameborder="0"
+            title="Example Vimeo Video"
+          >
+          </iframe>
         </div>
         <div class="main__title">
           Я верю, что дизайн должен быть добрым <br class="br-pc" />
-          и не терять актуальности <br class="br-820"/>
+          и не терять актуальности <br class="br-820" />
           со временем.
         </div>
       </div>
     </div>
+
     <div class="slider-container-wrap">
       <div class="slider-container">
         <div class="container-slider" id="slider-1">
@@ -71,8 +83,10 @@
               MR Group
             </a>
             <div class="container-slider__title-text">
-              рестайлинг лидера<br class="br-820"/> в девелопменте <br class="br-pc"/>
-              премиальной <br class="br-820"/> недвижимости
+              рестайлинг лидера<br class="br-820" />
+              в девелопменте <br class="br-pc" />
+              премиальной <br class="br-820" />
+              недвижимости
             </div>
           </div>
           <div class="container-slider__items">
@@ -82,7 +96,14 @@
             </div>
             <div class="container-slider__item">
               <div class="video-container">
-                <iframe src="https://player.vimeo.com/video/1028950325?background=1" frameborder="0" width="100%" allowfullscreen  title="" sandbox="allow-same-origin allow-scripts allow-pointer-lock allow-forms allow-popups"></iframe>
+                <iframe
+                  class="vimeo-video"
+                  src="https://player.vimeo.com/video/951855032?background=1"
+                  frameborder="0"
+                  allowfullscreen
+                  title="Example Vimeo Video"
+                >
+                </iframe>
               </div>
             </div>
             <div class="container-slider__item">
@@ -91,7 +112,14 @@
             </div>
             <div class="container-slider__item">
               <div class="video-container">
-                <iframe src="https://player.vimeo.com/video/1028950325?background=1" frameborder="0" allowfullscreen  title="" sandbox="allow-same-origin allow-scripts allow-pointer-lock allow-forms allow-popups"></iframe>
+                <iframe
+                  class="vimeo-video"
+                  src="https://player.vimeo.com/video/951855032?background=1"
+                  frameborder="0"
+                  allowfullscreen
+                  title="Example Vimeo Video"
+                >
+                </iframe>
               </div>
             </div>
             <div class="container-slider__item">
@@ -108,12 +136,26 @@
             </div>
             <div class="container-slider__item">
               <div class="video-container">
-                <iframe src="https://player.vimeo.com/video/1028950325?background=1" frameborder="0" allowfullscreen  title="" sandbox="allow-same-origin allow-scripts allow-pointer-lock allow-forms allow-popups"></iframe>
+                <iframe
+                  class="vimeo-video"
+                  src="https://player.vimeo.com/video/951855032?background=1"
+                  frameborder="0"
+                  allowfullscreen
+                  title="Example Vimeo Video"
+                >
+                </iframe>
               </div>
             </div>
             <div class="container-slider__item">
               <div class="video-container">
-                <iframe src="https://player.vimeo.com/video/1028950325?background=1" frameborder="0" allowfullscreen  title="" sandbox="allow-same-origin allow-scripts allow-pointer-lock allow-forms allow-popups"></iframe>
+                <iframe
+                  class="vimeo-video"
+                  src="https://player.vimeo.com/video/951855032?background=1"
+                  frameborder="0"
+                  allowfullscreen
+                  title="Example Vimeo Video"
+                >
+                </iframe>
               </div>
             </div>
             <div class="container-slider__item">
@@ -249,8 +291,10 @@
               Крошка Картошка
             </a>
             <div class="container-slider__title-text">
-              ребрендинг культовой<br class="br-820"/> российской сети <br  class="br-pc"/>
-              ресторанов<br class="br-820"/> быстрого питания
+              ребрендинг культовой<br class="br-820" />
+              российской сети <br class="br-pc" />
+              ресторанов<br class="br-820" />
+              быстрого питания
             </div>
           </div>
           <div class="container-slider__items">
@@ -266,27 +310,62 @@
             </div>
             <div class="container-slider__item">
               <div class="video-container">
-                <iframe src="https://player.vimeo.com/video/1028950325?background=1" frameborder="0" width="100%" allowfullscreen  title="" sandbox="allow-same-origin allow-scripts allow-pointer-lock allow-forms allow-popups"></iframe>
+                <iframe
+                  class="vimeo-video"
+                  src="https://player.vimeo.com/video/951855032?background=1"
+                  frameborder="0"
+                  allowfullscreen
+                  title="Example Vimeo Video"
+                >
+                </iframe>
               </div>
             </div>
             <div class="container-slider__item">
               <div class="video-container">
-                <iframe src="https://player.vimeo.com/video/1028950325?background=1" frameborder="0" width="100%" allowfullscreen  title="" sandbox="allow-same-origin allow-scripts allow-pointer-lock allow-forms allow-popups"></iframe>
+                <iframe
+                  class="vimeo-video"
+                  src="https://player.vimeo.com/video/951855032?background=1"
+                  frameborder="0"
+                  allowfullscreen
+                  title="Example Vimeo Video"
+                >
+                </iframe>
               </div>
             </div>
             <div class="container-slider__item">
               <div class="video-container">
-                <iframe src="https://player.vimeo.com/video/1028950325?background=1" frameborder="0" width="100%" allowfullscreen  title="" sandbox="allow-same-origin allow-scripts allow-pointer-lock allow-forms allow-popups"></iframe>
+                <iframe
+                  class="vimeo-video"
+                  src="https://player.vimeo.com/video/951855032?background=1"
+                  frameborder="0"
+                  allowfullscreen
+                  title="Example Vimeo Video"
+                >
+                </iframe>
               </div>
             </div>
             <div class="container-slider__item">
               <div class="video-container">
-                <iframe src="https://player.vimeo.com/video/1028950325?background=1" frameborder="0" width="100%" allowfullscreen  title="" sandbox="allow-same-origin allow-scripts allow-pointer-lock allow-forms allow-popups"></iframe>
+                <iframe
+                  class="vimeo-video"
+                  src="https://player.vimeo.com/video/951855032?background=1"
+                  frameborder="0"
+                  allowfullscreen
+                  title="Example Vimeo Video"
+                >
+                </iframe>
               </div>
             </div>
             <div class="container-slider__item">
               <div class="video-container">
-                <iframe src="https://player.vimeo.com/video/1028950325?background=1" frameborder="0" width="100%" allowfullscreen  title="" sandbox="allow-same-origin allow-scripts allow-pointer-lock allow-forms allow-popups"></iframe>
+                <iframe
+                  class="vimeo-video"
+                  src="https://player.vimeo.com/video/951855032?background=1"
+                  frameborder="0"
+                  allowfullscreen
+                  title="Example Vimeo Video"
+                >
+                </iframe>
               </div>
             </div>
             <div class="container-slider__item">
@@ -311,7 +390,14 @@
             </div>
             <div class="container-slider__item">
               <div class="video-container">
-                <iframe src="https://player.vimeo.com/video/1028950325?background=1" frameborder="0" width="100%" allowfullscreen  title="" sandbox="allow-same-origin allow-scripts allow-pointer-lock allow-forms allow-popups"></iframe>
+                <iframe
+                  class="vimeo-video"
+                  src="https://player.vimeo.com/video/951855032?background=1"
+                  frameborder="0"
+                  allowfullscreen
+                  title="Example Vimeo Video"
+                >
+                </iframe>
               </div>
             </div>
             <div class="container-slider__item">
@@ -475,19 +561,35 @@
               Mеханик
             </a>
             <div class="container-slider__title-text">
-              фирменный стиль компании,<br class="br-820"/> занимающейся <br  class="br-pc"/>
-              монтажом лифтов<br class="br-820"/> и техническим обслуживанием
+              фирменный стиль компании,<br class="br-820" />
+              занимающейся <br class="br-pc" />
+              монтажом лифтов<br class="br-820" />
+              и техническим обслуживанием
             </div>
           </div>
           <div class="container-slider__items">
             <div class="container-slider__item">
               <div class="video-container">
-                <iframe src="https://player.vimeo.com/video/1028950325?background=1" frameborder="0" width="100%" allowfullscreen  title="" sandbox="allow-same-origin allow-scripts allow-pointer-lock allow-forms allow-popups"></iframe>
+                <iframe
+                  class="vimeo-video"
+                  src="https://player.vimeo.com/video/951855032?background=1"
+                  frameborder="0"
+                  allowfullscreen
+                  title="Example Vimeo Video"
+                >
+                </iframe>
               </div>
             </div>
             <div class="container-slider__item">
               <div class="video-container">
-                <iframe src="https://player.vimeo.com/video/1028950325?background=1" frameborder="0" width="100%" allowfullscreen  title="" sandbox="allow-same-origin allow-scripts allow-pointer-lock allow-forms allow-popups"></iframe>
+                <iframe
+                  class="vimeo-video"
+                  src="https://player.vimeo.com/video/951855032?background=1"
+                  frameborder="0"
+                  allowfullscreen
+                  title="Example Vimeo Video"
+                >
+                </iframe>
               </div>
             </div>
             <div class="container-slider__item">
@@ -504,7 +606,14 @@
             </div>
             <div class="container-slider__item">
               <div class="video-container">
-                <iframe src="https://player.vimeo.com/video/1028950325?background=1" frameborder="0" width="100%" allowfullscreen  title="" sandbox="allow-same-origin allow-scripts allow-pointer-lock allow-forms allow-popups"></iframe>
+                <iframe
+                  class="vimeo-video"
+                  src="https://player.vimeo.com/video/951855032?background=1"
+                  frameborder="0"
+                  allowfullscreen
+                  title="Example Vimeo Video"
+                >
+                </iframe>
               </div>
             </div>
             <div class="container-slider__item">
@@ -521,7 +630,14 @@
             </div>
             <div class="container-slider__item">
               <div class="video-container">
-                <iframe src="https://player.vimeo.com/video/1028950325?background=1" frameborder="0" width="100%" allowfullscreen  title="" sandbox="allow-same-origin allow-scripts allow-pointer-lock allow-forms allow-popups"></iframe>
+                <iframe
+                  class="vimeo-video"
+                  src="https://player.vimeo.com/video/951855032?background=1"
+                  frameborder="0"
+                  allowfullscreen
+                  title="Example Vimeo Video"
+                >
+                </iframe>
               </div>
             </div>
             <div class="container-slider__item">
@@ -638,7 +754,8 @@
               Love & Wash
             </a>
             <div class="container-slider__title-text">
-              серия упаковок средств<br class="br-820"/> для стирки одежды
+              серия упаковок средств<br class="br-820" />
+              для стирки одежды
             </div>
           </div>
           <div class="container-slider__items">
@@ -787,13 +904,21 @@
               The Dom
             </a>
             <div class="container-slider__title-text">
-              фирменный стиль центра<br class="br-820"/> модных интерьеров
+              фирменный стиль центра<br class="br-820" />
+              модных интерьеров
             </div>
           </div>
           <div class="container-slider__items">
             <div class="container-slider__item">
               <div class="video-container">
-                <iframe src="https://player.vimeo.com/video/1028950325?background=1" frameborder="0" width="100%" allowfullscreen  title="" sandbox="allow-same-origin allow-scripts allow-pointer-lock allow-forms allow-popups"></iframe>
+                <iframe
+                  class="vimeo-video"
+                  src="https://player.vimeo.com/video/951855032?background=1"
+                  frameborder="0"
+                  allowfullscreen
+                  title="Example Vimeo Video"
+                >
+                </iframe>
               </div>
             </div>
             <div class="container-slider__item">
@@ -802,12 +927,26 @@
             </div>
             <div class="container-slider__item">
               <div class="video-container">
-                <iframe src="https://player.vimeo.com/video/1028950325?background=1" frameborder="0" width="100%" allowfullscreen  title="" sandbox="allow-same-origin allow-scripts allow-pointer-lock allow-forms allow-popups"></iframe>
+                <iframe
+                  class="vimeo-video"
+                  src="https://player.vimeo.com/video/951855032?background=1"
+                  frameborder="0"
+                  allowfullscreen
+                  title="Example Vimeo Video"
+                >
+                </iframe>
               </div>
             </div>
             <div class="container-slider__item">
               <div class="video-container">
-                <iframe src="https://player.vimeo.com/video/1028950325?background=1" frameborder="0" width="100%" allowfullscreen  title="" sandbox="allow-same-origin allow-scripts allow-pointer-lock allow-forms allow-popups"></iframe>
+                <iframe
+                  class="vimeo-video"
+                  src="https://player.vimeo.com/video/951855032?background=1"
+                  frameborder="0"
+                  allowfullscreen
+                  title="Example Vimeo Video"
+                >
+                </iframe>
               </div>
             </div>
             <div class="container-slider__item">
@@ -816,7 +955,14 @@
             </div>
             <div class="container-slider__item">
               <div class="video-container">
-                <iframe src="https://player.vimeo.com/video/1028950325?background=1" frameborder="0" width="100%" allowfullscreen  title="" sandbox="allow-same-origin allow-scripts allow-pointer-lock allow-forms allow-popups"></iframe>
+                <iframe
+                  class="vimeo-video"
+                  src="https://player.vimeo.com/video/951855032?background=1"
+                  frameborder="0"
+                  allowfullscreen
+                  title="Example Vimeo Video"
+                >
+                </iframe>
               </div>
             </div>
             <div class="container-slider__item">
@@ -833,7 +979,14 @@
             </div>
             <div class="container-slider__item">
               <div class="video-container">
-                <iframe src="https://player.vimeo.com/video/1028950325?background=1" frameborder="0" width="100%" allowfullscreen  title="" sandbox="allow-same-origin allow-scripts allow-pointer-lock allow-forms allow-popups"></iframe>
+                <iframe
+                  class="vimeo-video"
+                  src="https://player.vimeo.com/video/951855032?background=1"
+                  frameborder="0"
+                  allowfullscreen
+                  title="Example Vimeo Video"
+                >
+                </iframe>
               </div>
             </div>
             <div class="container-slider__item">
@@ -944,7 +1097,8 @@
               BurgaWave
             </a>
             <div class="container-slider__title-text">
-              фирменный стиль<br class="br-820"/> небольшой бургерной <br class="br-820"/><br  class="br-pc"/>
+              фирменный стиль<br class="br-820" />
+              небольшой бургерной <br class="br-820" /><br class="br-pc" />
               для сёрферов
             </div>
           </div>
@@ -955,7 +1109,14 @@
             </div>
             <div class="container-slider__item">
               <div class="video-container">
-                <iframe src="https://player.vimeo.com/video/1028950325?background=1" frameborder="0" width="100%" allowfullscreen  title="" sandbox="allow-same-origin allow-scripts allow-pointer-lock allow-forms allow-popups"></iframe>
+                <iframe
+                  class="vimeo-video"
+                  src="https://player.vimeo.com/video/951855032?background=1"
+                  frameborder="0"
+                  allowfullscreen
+                  title="Example Vimeo Video"
+                >
+                </iframe>
               </div>
             </div>
             <div class="container-slider__item">
@@ -1100,7 +1261,9 @@
               Mamoloko
             </a>
             <div class="container-slider__title-text">
-              серия упаковок молока<br class="br-820"/> для младенцев разного<br class="br-820"/> <br  class="br-pc"/>
+              серия упаковок молока<br class="br-820" />
+              для младенцев разного<br class="br-820" />
+              <br class="br-pc" />
               возраста
             </div>
           </div>
@@ -1111,7 +1274,14 @@
             </div>
             <div class="container-slider__item">
               <div class="video-container">
-                <iframe src="https://player.vimeo.com/video/1028950325?background=1" frameborder="0" width="100%" allowfullscreen  title="" sandbox="allow-same-origin allow-scripts allow-pointer-lock allow-forms allow-popups"></iframe>
+                <iframe
+                  class="vimeo-video"
+                  src="https://player.vimeo.com/video/951855032?background=1"
+                  frameborder="0"
+                  allowfullscreen
+                  title="Example Vimeo Video"
+                >
+                </iframe>
               </div>
             </div>
             <div class="container-slider__item">
@@ -1136,7 +1306,14 @@
             </div>
             <div class="container-slider__item">
               <div class="video-container">
-                <iframe src="https://player.vimeo.com/video/1028950325?background=1" frameborder="0" width="100%" allowfullscreen  title="" sandbox="allow-same-origin allow-scripts allow-pointer-lock allow-forms allow-popups"></iframe>
+                <iframe
+                  class="vimeo-video"
+                  src="https://player.vimeo.com/video/951855032?background=1"
+                  frameborder="0"
+                  allowfullscreen
+                  title="Example Vimeo Video"
+                >
+                </iframe>
               </div>
             </div>
             <div class="container-slider__item">
@@ -1239,7 +1416,6 @@
         </div>
       </div>
     </div>
-
     <div class="about-block">
       <div class="about-block__img">
         <img src="./img/profile.jpg" alt="" />
@@ -1403,6 +1579,7 @@
         <div class="psevdo-nav__leng psevdo-nav__leng_en">En</div>
       </div>
     </div>
+    <script src="/apivimeo.js"></script>
     <script src="./jquery.js"></script>
     <script src="./slick/slick/slick.js"></script>
     <script src="./scipt.js"></script>
