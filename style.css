@@ -533,7 +533,7 @@ a.about-block__blue-link {
     top: 0.59vw;
   }
   .about-block__img {
-    padding: 1.01vw 1.01vw 0.33vw 0.20vw;
+    padding: 1.01vw 1.01vw 0.33vw 0.2vw;
   }
   .about-block__img::after,
   .about-block__text-wrap_line::after {
@@ -553,7 +553,8 @@ a.about-block__blue-link {
     padding: 0.49vw 1.01vw 0.33vw 1.01vw;
   }
   .container-slider,
-  .container-slider__item img {
+  .container-slider__item img,
+  .container-slider__item-text-wrap {
     height: calc(100vh - 2.12vw);
   }
   .container-slider__item .video-container {
@@ -564,9 +565,9 @@ a.about-block__blue-link {
     height: calc(100vh - 2.12vw); /* Основная высота контейнера */
     overflow: hidden; /* Скрываем выходящее за границы содержимое */
     z-index: -1;
-}
+  }
 
-.video-container iframe {
+  .video-container iframe {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -574,7 +575,7 @@ a.about-block__blue-link {
     height: 100vh; /* Максимальная высота iframe */
     transform: translate(-50%, -50%);
     pointer-events: none;
-}
+  }
 }
 @media (max-width: 1300px) {
   .container-slider {
