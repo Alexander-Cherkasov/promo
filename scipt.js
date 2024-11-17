@@ -1,73 +1,3 @@
-// $(document).ready(function () {
-//   const list = document.querySelector(".slider-container");
-//   const mainBlock = document.querySelector(".main");
-//   let cloneCount = 0; // Счетчик текущих пачек дублей
-//   const maxClones = 3; // Максимальное количество пачек дублей
-
-//   // Инициализация slick-слайдера
-//   const initializeSlick = () => {
-//     $(".container-slider__items").slick({
-//       infinite: false,
-//       speed: 400,
-//     });
-//   };
-
-//   // Проверяем, существует ли элемент перед инициализацией
-//   if (list && mainBlock) {
-//     // Запускаем slick при загрузке страницы
-//     initializeSlick();
-
-//     const cloneItems = (direction) => {
-//       let items = Array.from(list.querySelectorAll(".container-slider"));
-
-//       if (cloneCount < maxClones) {
-//         // Дублируем слайды и добавляем в указанном направлении
-//         items.forEach((item) => {
-//           const clonedItem = item.cloneNode(true);
-//           if (direction === "up") {
-//             list.insertBefore(clonedItem, list.firstChild);
-//           } else if (direction === "down") {
-//             list.appendChild(clonedItem);
-//           }
-//         });
-
-//         // Увеличиваем счетчик дублей
-//         cloneCount++;
-//       } else {
-//         // Удаляем первую пачку дублей, чтобы освободить место для новых
-//         let clones = list.querySelectorAll(".container-slider");
-//         for (let i = 0; i < items.length; i++) {
-//           if (clones[i].parentNode === list) {
-//             list.removeChild(clones[i]);
-//           }
-//         }
-//         cloneCount--; // Уменьшаем счетчик дублей после удаления старых
-//       }
-//     };
-
-//     // Добавление дублей при достижении определенного положения прокрутки
-//     document.addEventListener("scroll", function () {
-//       const mainRect = mainBlock.getBoundingClientRect();
-
-//       if (mainRect.bottom <= 65 && !mainBlock.classList.contains("hidden")) {
-//         mainBlock.classList.add("hidden");
-//         cloneItems("up");
-//         list.scrollTop = list.scrollHeight / 2; // Сохраняем плавность прокрутки
-//       }
-//     });
-
-//     // Обработчик события прокрутки для добавления дублей вниз
-//     list.addEventListener("scroll", function () {
-//       if (this.scrollTop >= this.scrollHeight - this.clientHeight - 1) {
-//         cloneItems("down");
-//         // Устанавливаем scrollTop для продолжения бесконечной прокрутки
-//         this.scrollTop -= list.querySelectorAll(".container-slider")[0].clientHeight * items.length / maxClones;
-//       }
-//     });
-//   } else {
-//     console.warn("Элементы .slider-container или .main не найдены на странице.");
-//   }
-// });
 // Бесконечность
 document.addEventListener('DOMContentLoaded', () => {
   // Инициализируем все слайдеры с классом 'container-slider__items' при загрузке страницы
@@ -127,25 +57,27 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-document.addEventListener('scroll', () => {
-  const sliderContainer = document.querySelector('.slider-container');
-  const sliderItems = sliderContainer.children;
-  const containerHeight = sliderContainer.scrollHeight;
-  const scrollPosition = window.scrollY;
+// Скрипт для бесконечного скролла работает только на разрешении более 1300px
+if (window.innerWidth > 1300) {
+  document.addEventListener('scroll', () => {
+      const sliderContainer = document.querySelector('.slider-container');
+      const sliderItems = sliderContainer.children;
+      const containerHeight = sliderContainer.scrollHeight;
+      const scrollPosition = window.scrollY;
 
-  // Если прокрутка доходит до конца блока, переносим первый элемент в конец
-  if (scrollPosition + window.innerHeight >= containerHeight) {
-      sliderContainer.appendChild(sliderItems[0]); // Перемещаем первый элемент в конец
-      window.scrollTo(0, scrollPosition - sliderItems[0].offsetHeight); // Корректируем позицию скролла
-  }
+      // Если прокрутка доходит до конца блока, переносим первый элемент в конец
+      if (scrollPosition + window.innerHeight >= containerHeight) {
+          sliderContainer.appendChild(sliderItems[0]); // Перемещаем первый элемент в конец
+          window.scrollTo(0, scrollPosition - sliderItems[0].offsetHeight); // Корректируем позицию скролла
+      }
 
-  // Если прокрутка доходит до начала блока, переносим последний элемент в начало
-  if (scrollPosition <= 0) {
-      sliderContainer.insertBefore(sliderItems[sliderItems.length - 1], sliderItems[0]); // Перемещаем последний элемент в начало
-      window.scrollTo(0, sliderItems[0].offsetHeight); // Корректируем позицию скролла
-  }
-});
-
+      // Если прокрутка доходит до начала блока, переносим последний элемент в начало
+      if (scrollPosition <= 0) {
+          sliderContainer.insertBefore(sliderItems[sliderItems.length - 1], sliderItems[0]); // Перемещаем последний элемент в начало
+          window.scrollTo(0, sliderItems[0].offsetHeight); // Корректируем позицию скролла
+      }
+  });
+}
 // Бесконечность
 
 // СКРОЛЛ
