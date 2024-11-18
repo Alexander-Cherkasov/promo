@@ -236,20 +236,20 @@
 .container-slider .next-slider {
   position: absolute;
   right: 0;
-  padding-right: 40px;
-  bottom: 35px;
+  padding-right: 1.30vw;
+  bottom: 1.14vw;
   mix-blend-mode: difference;
   cursor: pointer;
 }
-.next-slider svg {
+.slick-arrow svg {
   width: 1.46vw;
   height: 0.75vw;
 }
 .container-slider .prev-slider {
   position: absolute;
   left: 0;
-  padding-left: 40px;
-  bottom: 35px;
+  padding-left: 1.30vw;
+  bottom: 1.14vw;
   mix-blend-mode: difference;
   z-index: 10;
   cursor: pointer;
