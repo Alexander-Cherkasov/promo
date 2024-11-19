@@ -627,6 +627,26 @@ a.about-block__blue-link {
     transform: translate(-50%, -50%);
     pointer-events: none;
   }
+  .next-slider.slick-arrow {
+    width: 50%;
+    height: calc(100vh - 2.12vw);
+    display: flex;
+    align-items: end;
+    justify-content: end;
+    padding-bottom: 1.14vw;
+    bottom: 0;
+    top: 0;
+  }
+  .prev-slider.slick-arrow {
+    width: 50%;
+    height: calc(100vh - 2.12vw);
+    display: flex;
+    align-items: end;
+    justify-content: start;
+    padding-bottom: 1.14vw;
+    bottom: 0;
+    top: 0;
+  }
   .slider-container-wrap {
     /* margin-top: calc(100vh + 2.12vw); */
     position: absolute;
@@ -948,4 +968,21 @@ a.about-block__blue-link {
   .container-slider__item-text {
     gap: 4px;
   }
+}
+/* Стиль для кастомного курсора */
+#custom-cursor {
+  position: fixed;
+  pointer-events: none;
+  z-index: 1000;
+  font-size: 16px;
+  color: white; /* Измените цвет текста по необходимости */
+  display: none;
+  transform: translate(-50%, -50%); /* Центрирование текста */
+  mix-blend-mode: difference;
+}
+
+/* Скрываем стандартный курсор на целевых элементах */
+.next-slider.slick-arrow:hover,
+.prev-slider.slick-arrow:hover {
+  cursor: none;
 }
