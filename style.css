@@ -1,8 +1,8 @@
 @font-face {
   font-family: "favorit";
   src: url("./font/ABCFavoritCYR-Regular-Trial.woff") format("woff"),
-  url("./font/ABCFavoritCYR-Regular-Trial.woff2") format("woff2"),
-   url("./font/ABCFavoritCYR-Regular-Trial.otf") format("opentype");
+    url("./font/ABCFavoritCYR-Regular-Trial.woff2") format("woff2"),
+    url("./font/ABCFavoritCYR-Regular-Trial.otf") format("opentype");
   font-style: normal;
   font-weight: normal;
 }
@@ -236,7 +236,7 @@
 .container-slider .next-slider {
   position: absolute;
   right: 0;
-  padding-right: 1.30vw;
+  padding-right: 1.3vw;
   bottom: 1.14vw;
   mix-blend-mode: difference;
   cursor: pointer;
@@ -248,7 +248,7 @@
 .container-slider .prev-slider {
   position: absolute;
   left: 0;
-  padding-left: 1.30vw;
+  padding-left: 1.3vw;
   bottom: 1.14vw;
   mix-blend-mode: difference;
   z-index: 10;
@@ -687,6 +687,23 @@ a.about-block__blue-link {
   .container-slider__item-text::after {
     content: none;
   }
+  /* Стиль для кастомного курсора */
+  #custom-cursor {
+    position: fixed;
+    pointer-events: none;
+    z-index: 1000;
+    font-size: 16px;
+    color: white; /* Измените цвет текста по необходимости */
+    display: none;
+    transform: translate(-50%, -50%); /* Центрирование текста */
+    mix-blend-mode: difference;
+  }
+
+  /* Скрываем стандартный курсор на целевых элементах */
+  .next-slider.slick-arrow:hover,
+  .prev-slider.slick-arrow:hover {
+    cursor: none;
+  }
 }
 @media (max-width: 1300px) {
   .container-slider {
@@ -968,21 +985,4 @@ a.about-block__blue-link {
   .container-slider__item-text {
     gap: 4px;
   }
-}
-/* Стиль для кастомного курсора */
-#custom-cursor {
-  position: fixed;
-  pointer-events: none;
-  z-index: 1000;
-  font-size: 16px;
-  color: white; /* Измените цвет текста по необходимости */
-  display: none;
-  transform: translate(-50%, -50%); /* Центрирование текста */
-  mix-blend-mode: difference;
-}
-
-/* Скрываем стандартный курсор на целевых элементах */
-.next-slider.slick-arrow:hover,
-.prev-slider.slick-arrow:hover {
-  cursor: none;
 }

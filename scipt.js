@@ -148,35 +148,36 @@ burger.onclick = () => {
   document.querySelector(".about-block.active").classList.remove("active");
 };
 
-
-// Курсор
-document.addEventListener('DOMContentLoaded', function() {
-  const cursor = document.getElementById('custom-cursor');
-
-  document.addEventListener('mousemove', function(e) {
-      cursor.style.left = e.clientX + 'px';
-      cursor.style.top = e.clientY + 'px';
+if (window.innerWidth > 1300) {
+  // Курсор
+  document.addEventListener('DOMContentLoaded', function() {
+    const cursor = document.getElementById('custom-cursor');
+  
+    document.addEventListener('mousemove', function(e) {
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
+    });
+  
+    // Обработчики для элементов .next-slider.slick-arrow
+    document.querySelectorAll('.next-slider.slick-arrow').forEach(element => {
+        element.addEventListener('mouseenter', function() {
+            cursor.textContent = 'next';
+            cursor.style.display = 'block';
+        });
+        element.addEventListener('mouseleave', function() {
+            cursor.style.display = 'none';
+        });
+    });
+  
+    // Обработчики для элементов .prev-slider.slick-arrow
+    document.querySelectorAll('.prev-slider.slick-arrow').forEach(element => {
+        element.addEventListener('mouseenter', function() {
+            cursor.textContent = 'prev';
+            cursor.style.display = 'block';
+        });
+        element.addEventListener('mouseleave', function() {
+            cursor.style.display = 'none';
+        });
+    });
   });
-
-  // Обработчики для элементов .next-slider.slick-arrow
-  document.querySelectorAll('.next-slider.slick-arrow').forEach(element => {
-      element.addEventListener('mouseenter', function() {
-          cursor.textContent = 'next';
-          cursor.style.display = 'block';
-      });
-      element.addEventListener('mouseleave', function() {
-          cursor.style.display = 'none';
-      });
-  });
-
-  // Обработчики для элементов .prev-slider.slick-arrow
-  document.querySelectorAll('.prev-slider.slick-arrow').forEach(element => {
-      element.addEventListener('mouseenter', function() {
-          cursor.textContent = 'prev';
-          cursor.style.display = 'block';
-      });
-      element.addEventListener('mouseleave', function() {
-          cursor.style.display = 'none';
-      });
-  });
-});
+}
