@@ -702,11 +702,17 @@ a.about-block__blue-link {
     transform: translate(-50%, -50%); /* Центрирование текста */
     mix-blend-mode: difference;
   }
-
+  #custom-cursor svg {
+    width: 1.46vw;
+    height: 0.75vw;
+  }
   /* Скрываем стандартный курсор на целевых элементах */
   .next-slider.slick-arrow:hover,
   .prev-slider.slick-arrow:hover {
     cursor: none;
+  }
+  .slick-arrow svg {
+    display: none;
   }
 }
 @media (max-width: 1300px) {
