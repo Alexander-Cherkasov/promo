@@ -1,8 +1,8 @@
 @font-face {
   font-family: "favorit";
-  src: url("./font/ABCFavoritCYR-Regular-Trial.otf") format("opentype"),
-    url("./font/ABCFavoritCYR-Regular-Trial.woff") format("woff"),
-    url("./font/ABCFavoritCYR-Regular-Trial.woff2") format("woff2");
+  src: url("./font/ABCFavoritCYR-Regular-Trial.woff") format("woff"),
+  url("./font/ABCFavoritCYR-Regular-Trial.woff2") format("woff2"),
+   url("./font/ABCFavoritCYR-Regular-Trial.otf") format("opentype");
   font-style: normal;
   font-weight: normal;
 }
@@ -621,8 +621,9 @@ a.about-block__blue-link {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 177.78vh; /* Соотношение сторон 16:9 */
-    height: 100vh; /* Максимальная высота iframe */
+    /* width: 177.78vh; */
+    width: 100%; /* Соотношение сторон 16:9 */
+    height: calc(100vh - 2vw); /* Максимальная высота iframe */
     transform: translate(-50%, -50%);
     pointer-events: none;
   }
