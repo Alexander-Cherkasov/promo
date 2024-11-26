@@ -181,3 +181,92 @@ if (window.innerWidth > 1300) {
     });
   });
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Находим все элементы с классом container-slider__title
+  const titles = document.querySelectorAll('.container-slider__title');
+
+  titles.forEach(title => {
+      title.addEventListener('click', () => {
+          // Находим слайдер внутри родителя
+          const slider = title.parentElement.querySelector('.container-slider__items');
+
+          if (slider) {
+              // Возвращаем слайдер к первому слайду
+              if (slider instanceof HTMLUListElement) {
+                  // Прокрутка слайдера с помощью scroll или позиционирования
+                  slider.scrollTo({ left: 0, behavior: 'smooth' });
+              } else if (slider instanceof HTMLElement && slider.style.transform) {
+                  slider.style.transform = 'translateX(0)';
+              }
+              // Если используется библиотека слайдера, вызов метода сброса (например, Swiper или Slick)
+              if (slider.swiper) {
+                  slider.swiper.slideTo(0);
+              } else if ($(slider).hasClass('slick-slider')) {
+                  $(slider).slick('slickGoTo', 0);
+              }
+          }
+      });
+  });
+});
+
+
+
+
+// Получаем все слайдеры и их iframes
+const sliders = document.querySelectorAll('#slider-2, #slider-5');
+
+sliders.forEach(slider => {
+    const iframe = slider.querySelector('.swipe-frame'); // iframe внутри текущего слайдера
+    let isSwiping = false; // Флаг для определения свайпа
+    let timer;
+
+    // Обработка начала касания/нажатия
+    slider.addEventListener('touchstart', startInteraction, { passive: true });
+    slider.addEventListener('mousedown', startInteraction);
+
+    function startInteraction(event) {
+        isSwiping = false; // Сбрасываем флаг свайпа
+        clearTimeout(timer); // Сбрасываем таймер
+        slider.addEventListener('mousemove', detectSwipe); // Отслеживаем движение мыши
+        slider.addEventListener('touchmove', detectSwipe, { passive: true });
+    }
+
+    // Обработка движения мыши/пальца
+    function detectSwipe() {
+        isSwiping = true; // Пользователь двигается — это свайп
+        iframe.style.pointerEvents = 'none'; // Отключаем iframe для свайпа
+    }
+
+    // Обработка завершения взаимодействия
+    slider.addEventListener('mouseup', endInteraction);
+    slider.addEventListener('touchend', endInteraction);
+
+    function endInteraction(event) {
+        slider.removeEventListener('mousemove', detectSwipe); // Прекращаем отслеживать движение
+        slider.removeEventListener('touchmove', detectSwipe);
+
+        if (!isSwiping) {
+            // Если это был клик/тап, а не свайп
+            iframe.style.pointerEvents = 'auto'; // Включаем взаимодействие с iframe
+
+            // Программная эмуляция пользовательского взаимодействия
+            simulateUserClick(iframe);
+
+            clearTimeout(timer);
+            timer = setTimeout(() => {
+                iframe.style.pointerEvents = 'none'; // Возвращаем свайп через 3 секунды
+            }, 3000);
+        }
+    }
+
+    function simulateUserClick(element) {
+        // Создаем новое событие клика
+        const clickEvent = new MouseEvent('click', {
+            bubbles: true,
+            cancelable: true,
+            view: window,
+        });
+        element.dispatchEvent(clickEvent); // Генерируем событие на элементе
+    }
+});
