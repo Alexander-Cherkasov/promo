@@ -118,9 +118,6 @@
   .main-frame-mob {
     display: block;
   }
-  .item-text-item-subtitle-link-none {
-    display: inline;
-  }
   .container-slider__item-text-wrap-links {
     display: none;
   }
@@ -406,7 +403,7 @@ a.header__link.header__link_project {
   position: fixed;
   width: 100%;
   height: calc(100vh - 65px);
-  left: -100%;
+  left: -140%;
   top: 0;
   z-index: 40;
   background: white;
@@ -1052,6 +1049,19 @@ a.about-block__blue-link {
   .container-slider__title-top span {
     text-decoration: underline;
     margin-left: 1.34vw;
+  }
+  .item-text-item-subtitle-link_nontt::after {
+    height: 3.9vw !important;
+    top: 0.5vw !important;
+    right: -1.8vw !important;
+  }
+  .container-slider__item-text-item-subtitle {
+    gap: 0 3.6vw !important;
+  }
+  .item-text-item-subtitle-link-none {
+    display: inline;
+    text-decoration: none;
+    color: #b4b4b4 !important;
   }
 }
 /* @media (max-width: 820px) {
