@@ -697,7 +697,25 @@ a.about-block__blue-link {
 .br-820 {
   display: none;
 }
+.text-item__link-s {
+  text-decoration: none;
+  transition: 240ms;
+}
+.about-block-tabe__line-items a {
+  text-decoration: none;
+  transition: 240ms;
+  display: block;
+}
+.about-block-tabe__line-item {
+  text-decoration: none;
+  transition: 240ms;
+}
 @media (min-width: 1300px) {
+  .text-item__link-s:hover,
+  .about-block-tabe__line-items a:hover,
+  .about-block-tabe__line-item:hover {
+    color: #b4b4b4;
+  }
   .container-slider__item {
     cursor: none;
   }
