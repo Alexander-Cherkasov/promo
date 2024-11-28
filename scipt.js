@@ -144,7 +144,19 @@ document.addEventListener("scroll", function () {
 });
 
 // СКРОЛЛ
-
+document.querySelector('#anch-pj-to').addEventListener('click', function () {
+  const targetElement = document.querySelector('#anch-pj');
+  const offset = 0; // Дополнительное смещение от верхней границы
+  
+  if (targetElement) {
+      const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY - offset;
+      
+      window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+      });
+  }
+});
 // Открытие блока о себе и моб меню
 const openAbout = document.querySelectorAll("#open-about");
 const burger = document.querySelector(".burger");
@@ -192,6 +204,17 @@ if (window.innerWidth > 1300) {
         cursor.style.display = "none";
       });
     });
+    // Обработчики для элементов .container-slider__item
+    document.querySelectorAll(".container-slider__item").forEach((element) => {
+      element.addEventListener("mouseenter", function () {
+        cursor.innerHTML = '<div class="bounce-cursor"></div>';
+        cursor.style.display = "block";
+      });
+      element.addEventListener("mouseleave", function () {
+        cursor.style.display = "none";
+        cursor.innerHTML = ""; // Очистка содержимого
+      });
+    });
   });
 }
 
@@ -206,18 +229,16 @@ document.addEventListener("DOMContentLoaded", () => {
         ".container-slider__items"
       );
 
-      if (slider) {
-        // Возвращаем слайдер к первому слайду
-        if (slider instanceof HTMLUListElement) {
-          // Прокрутка слайдера с помощью scroll или позиционирования
-          slider.scrollTo({ left: 0, behavior: "smooth" });
-        } else if (slider instanceof HTMLElement && slider.style.transform) {
-          slider.style.transform = "translateX(0)";
-        }
-        // Если используется библиотека слайдера, вызов метода сброса (например, Swiper или Slick)
-        if (slider.swiper) {
-          slider.swiper.slideTo(0);
-        } else if ($(slider).hasClass("slick-slider")) {
+      if (slider && $(slider).hasClass("slick-initialized")) {
+        // Получаем текущий индекс активного слайда
+        const currentSlideIndex = $(slider).slick("slickCurrentSlide");
+        const totalSlides = $(slider).slick("getSlick").slideCount;
+
+        if (currentSlideIndex === 0) {
+          // Если находимся на первом слайде, перемещаемся на последний
+          $(slider).slick("slickGoTo", totalSlides - 1);
+        } else {
+          // Иначе возвращаемся на первый слайд
           $(slider).slick("slickGoTo", 0);
         }
       }
@@ -242,6 +263,7 @@ function updateMoscowTime() {
 
   // Обновляем элемент на странице
   document.getElementById("moscow-time").textContent = timeString;
+  document.getElementById("moscow-time-2").textContent = timeString;
 }
 
 // Обновляем время каждую минуту

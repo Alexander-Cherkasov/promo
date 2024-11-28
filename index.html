@@ -20,7 +20,7 @@
       <nav>
         <ul>
           <li>
-            <a class="header__link header__link_project" href="">проекты</a>
+            <span class="header__link header__link_project" id="anch-pj-to">проекты</span>
           </li>
           <div>
             <li>
@@ -72,7 +72,7 @@
         <div class="scroll-down">scroll down ↓</div>
       </div>
     </div>
-    <div class="slider-container-wrap">
+    <div class="slider-container-wrap" id="anch-pj">
       <div class="slider-container">
         <div class="container-slider" id="slider-1">
           <div class="container-slider__title">
@@ -846,6 +846,11 @@
             </div>
             <div class="container-slider__item">
               <div class="container-slider__item-text-wrap">
+                <div class="container-slider__item-text-wrap-links">
+                  <a href="" class="container-slider__item-text-wrap-link">MUSE Design Awards</a>
+                  <a href="" class="container-slider__item-text-wrap-link">Sreda Festival</a>
+                  <a href="" class="container-slider__item-text-wrap-link">A' Design Award</a>
+                </div>
                 <div class="container-slider__item-text">
                   <div class="container-slider__item-text-mobile-wrap-over">
                     <div class="container-slider__item-text-mobile-wrap">
@@ -926,6 +931,17 @@
                       
                       <a href="" class="item-text-item-subtitle-link_nontt"
                         >3D визуализация</a
+                      >
+                    </div>
+                    <div class="container-slider__item-text-item-subtitle-mobile-l">
+                      <a class="item-text-item-subtitle-link item-text-item-subtitle-link-none" href=""
+                        >MUSE Design Awards</a
+                      >
+                      <a class="item-text-item-subtitle-link item-text-item-subtitle-link-none" href=""
+                        >Sreda Festival</a
+                      >
+                      <a class="item-text-item-subtitle-link item-text-item-subtitle-link-none" href=""
+                        >A' Design Award</a
                       >
                     </div>
                   </div>
@@ -1378,6 +1394,10 @@
             </div>
             <div class="container-slider__item">
               <div class="container-slider__item-text-wrap">
+                <div class="container-slider__item-text-wrap-links">
+                  <a href="" class="container-slider__item-text-wrap-link">Pentawards 2020</a>
+                  <a href="" class="container-slider__item-text-wrap-link">World Brand Design Society Awards</a>
+                </div>
                 <div class="container-slider__item-text">
                   <div class="container-slider__item-text-mobile-wrap-over">
                     <div class="container-slider__item-text-mobile-wrap">
@@ -1460,6 +1480,14 @@
                         >моушн-дизайн</a
                       >
                     </div>
+                    <div class="container-slider__item-text-item-subtitle-mobile-l">
+                      <a class="item-text-item-subtitle-link item-text-item-subtitle-link-none" href=""
+                        >Pentawards 2020</a
+                      >
+                      <a class="item-text-item-subtitle-link item-text-item-subtitle-link-none" href=""
+                        >World Brand Design Society Awards</a
+                      >
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1499,7 +1527,7 @@
           <a class="about-block__blue-link" href="">CV</a>
         </div>
         <div class="about-block__text-item about-block__text-item_coding">
-          Coding
+           <a href="https://it-web.dev/">Coding Artem K.</a>
         </div>
       </div>
       <div class="about-block__text-wrap-dx2">
@@ -1559,28 +1587,28 @@
         </div>
         <div class="about-block__text-wrap">
           <div class="about-block__text-item">
-            ПУБЛИКАЦИИ & ОСОБЕННОСТИ <br />
-            <a class="about-block-link-hvr" href="http://"
-              >Packaging Of The World
-              <span>Banka Love&Wash Mamoloko Green Story LS</span></a
-            >
-            <br />
-            <a class="about-block-link-hvr" href="http://"
-              >WBDS
-              <span
-                >BurgaWave Mechanic Banka Love&Wash The DOM Mamoloko Green
-                Story</span
-              ></a
-            >
-            <br />
-            <a class="about-block-link-hvr" href="http://"
-              >The Dieline <span>Love&Wash Green Story</span></a
-            >
-            <br />
-            <a class="about-block-link-hvr" href="http://"
-              >Favorite Design <span>Love&Wash Green Story Mamoloko</span></a
-            >
-            <br />
+            ПУБЛИКАЦИИ ПРОЕКТОВ<br />
+            <div class="about-block-link-hvr">Packaging Of The World
+              <a href="">Banka</a> <a href="">Love&Wash</a> <a href="">Mamoloko</a> <a href="">Green Story LS</a>
+            </div>
+            <div class="about-block-link-hvr" >WBDS
+               <a href="">Mechanic</a>
+               <a href="">The DOM</a>
+               <a href="">BurgaWave</a>
+               <a href="">Love&Wash</a>
+               <a href="">Mamoloko</a> 
+               <a href="">Banka</a>    
+               <a href="">Slawine</a>
+            </div>
+            <div class="about-block-link-hvr">The Dieline 
+              <a href="">Love&Wash</a> 
+              <a href="">Green Story</a>
+            </div>
+            <div class="about-block-link-hvr">Favorite Design 
+              <a href="">Love&Wash</a> 
+              <a href="">Green Story</a>
+              <a href="">Mamoloko</a>
+            </div>
             10 уникальных концепций дизайна упаковки для молока <br />
             Упаковка, которую нельзя пропустить в&nbsp;июле 2020 года <br />
             Упаковка, которую нельзя пропустить в&nbsp;мае 2019 года <br />
@@ -1613,8 +1641,8 @@
         </div>
       </div>
       <div class="about-block__text-hidden">
-        <div>Coding</div>
-        <div>Время МСК 11:24</div>
+        <div><a href="https://it-web.dev/">Coding Artem K.</a></div>
+        <div>Время МСК <span id="moscow-time-2"></span></div>
         <div>@ 2024 Александр Черкасов. Все права защищены.</div>
       </div>
     </div>
