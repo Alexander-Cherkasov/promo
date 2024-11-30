@@ -347,21 +347,3 @@ sliders.forEach((slider) => {
   }
 });
 
-
-
-const apiUrl = 'https://api.kinescope.io/v1/videos';
-const apiToken = 'ee27d390-feca-4981-b84a-e0b3df969082';
-
-// Получение информации о видео
-fetch(apiUrl, {
-    method: 'GET',
-    headers: {
-        'Authorization': `Bearer ${apiToken}`,
-        'Content-Type': 'application/json',
-    },
-})
-    .then(response => response.json())
-    .then(data => console.log('Информация о видео:', data))
-    .catch(error => console.error('Ошибка при запросе:', error));
-
-    

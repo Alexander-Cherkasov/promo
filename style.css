@@ -1243,18 +1243,3 @@ a.about-block__blue-link {
   pointer-events: none; /* Отключено по умолчанию */
   transition: pointer-events 0.3s ease-in-out;
 }
-
-
-.video-container-test-btn {
-  display: none;
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  top: 0;
-  z-index: 1000000;
-  margin: auto;
-  width: 40px;
-  height: 40px;
-  background: red;
-}
