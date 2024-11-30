@@ -145,6 +145,25 @@ document.addEventListener("scroll", function () {
 
 // СКРОЛЛ
 document.querySelector('#anch-pj-to').addEventListener('click', function () {
+
+  document.querySelector('.about-block.active').classList.remove('active')
+
+  const targetElement = document.querySelector('#anch-pj');
+  const offset = 0; // Дополнительное смещение от верхней границы
+  
+  if (targetElement) {
+      const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY - offset;
+      
+      window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+      });
+  }
+});
+document.querySelector('#mob-project').addEventListener('click', function () {
+
+  document.querySelector('.psevdo-nav.active').classList.remove('active')
+
   const targetElement = document.querySelector('#anch-pj');
   const offset = 0; // Дополнительное смещение от верхней границы
   
@@ -327,3 +346,22 @@ sliders.forEach((slider) => {
     element.dispatchEvent(clickEvent); // Генерируем событие на элементе
   }
 });
+
+
+
+const apiUrl = 'https://api.kinescope.io/v1/videos';
+const apiToken = 'ee27d390-feca-4981-b84a-e0b3df969082';
+
+// Получение информации о видео
+fetch(apiUrl, {
+    method: 'GET',
+    headers: {
+        'Authorization': `Bearer ${apiToken}`,
+        'Content-Type': 'application/json',
+    },
+})
+    .then(response => response.json())
+    .then(data => console.log('Информация о видео:', data))
+    .catch(error => console.error('Ошибка при запросе:', error));
+
+    
