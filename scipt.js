@@ -144,37 +144,17 @@ document.addEventListener("scroll", function () {
 });
 
 // СКРОЛЛ
-document.querySelector('#anch-pj-to').addEventListener('click', function () {
-
-  document.querySelector('.about-block.active').classList.remove('active')
-
-  const targetElement = document.querySelector('#anch-pj');
-  const offset = 0; // Дополнительное смещение от верхней границы
-  
-  if (targetElement) {
-      const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY - offset;
-      
-      window.scrollTo({
-          top: targetPosition,
-          behavior: 'smooth'
-      });
+document.querySelector("#anch-pj-to").addEventListener("click", function () {
+  if (document.querySelector(".about-block.active")) {
+    document.querySelector(".about-block.active").classList.remove("active");
+  }
+  if (document.querySelector(".header")) {
+    document.querySelector(".header").classList.remove("active");
   }
 });
-document.querySelector('#mob-project').addEventListener('click', function () {
-
-  document.querySelector('.psevdo-nav.active').classList.remove('active')
-
-  const targetElement = document.querySelector('#anch-pj');
-  const offset = 0; // Дополнительное смещение от верхней границы
-  
-  if (targetElement) {
-      const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY - offset;
-      
-      window.scrollTo({
-          top: targetPosition,
-          behavior: 'smooth'
-      });
-  }
+document.querySelector("#mob-project").addEventListener("click", function () {
+  document.querySelector(".psevdo-nav.active").classList.remove("active");
+  document.querySelector(".header").classList.remove("active");
 });
 // Открытие блока о себе и моб меню
 const openAbout = document.querySelectorAll("#open-about");
@@ -183,6 +163,13 @@ openAbout.forEach((el) => {
   el.onclick = () => {
     document.querySelector(".about-block").classList.toggle("active");
     document.querySelector(".header").classList.toggle("active");
+
+    const popupContent = document.querySelector(".about-block"); // Элемент внутри попапа
+    if (popupContent) {
+      popupContent.scrollTo({
+        top: 0, // Прокрутка к началу
+      });
+    }
   };
 });
 burger.onclick = () => {
@@ -225,6 +212,20 @@ if (window.innerWidth > 1300) {
     });
     // Обработчики для элементов .container-slider__item
     document.querySelectorAll(".container-slider__item").forEach((element) => {
+      console.log(element);
+
+      element.addEventListener("mouseenter", function () {
+        cursor.innerHTML = '<div class="bounce-cursor"></div>';
+        cursor.style.display = "block";
+      });
+      element.addEventListener("mouseleave", function () {
+        cursor.style.display = "none";
+        cursor.innerHTML = ""; // Очистка содержимого
+      });
+    });
+    document.querySelectorAll(".header").forEach((element) => {
+      console.log(element);
+
       element.addEventListener("mouseenter", function () {
         cursor.innerHTML = '<div class="bounce-cursor"></div>';
         cursor.style.display = "block";
@@ -347,3 +348,11 @@ sliders.forEach((slider) => {
   }
 });
 
+// ТЕСТ
+// Находим элемент
+
+document.querySelector("#anch-pj-to").addEventListener("click", function () {
+  setTimeout(this.click(), 50);
+});
+
+// ТЕСТ
