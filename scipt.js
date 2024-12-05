@@ -293,60 +293,60 @@ setInterval(updateMoscowTime, 60000); // Обновление каждую ми�
 // Получаем все слайдеры и их iframes
 const sliders = document.querySelectorAll("#slider-2, #slider-5");
 
-sliders.forEach((slider) => {
-  const iframe = slider.querySelector(".swipe-frame"); // iframe внутри текущего слайдера
-  let isSwiping = false; // Флаг для определения свайпа
-  let timer;
+// sliders.forEach((slider) => {
+//   const iframe = slider.querySelector(".swipe-frame"); // iframe внутри текущего слайдера
+//   let isSwiping = false; // Флаг для определения свайпа
+//   let timer;
 
-  // Обработка начала касания/нажатия
-  slider.addEventListener("touchstart", startInteraction, { passive: true });
-  slider.addEventListener("mousedown", startInteraction);
+//   // Обработка начала касания/нажатия
+//   slider.addEventListener("touchstart", startInteraction, { passive: true });
+//   slider.addEventListener("mousedown", startInteraction);
 
-  function startInteraction(event) {
-    isSwiping = false; // Сбрасываем флаг свайпа
-    clearTimeout(timer); // Сбрасываем таймер
-    slider.addEventListener("mousemove", detectSwipe); // Отслеживаем движение мыши
-    slider.addEventListener("touchmove", detectSwipe, { passive: true });
-  }
+//   function startInteraction(event) {
+//     isSwiping = false; // Сбрасываем флаг свайпа
+//     clearTimeout(timer); // Сбрасываем таймер
+//     slider.addEventListener("mousemove", detectSwipe); // Отслеживаем движение мыши
+//     slider.addEventListener("touchmove", detectSwipe, { passive: true });
+//   }
 
-  // Обработка движения мыши/пальца
-  function detectSwipe() {
-    isSwiping = true; // Пользователь двигается — это свайп
-    iframe.style.pointerEvents = "none"; // Отключаем iframe для свайпа
-  }
+//   // Обработка движения мыши/пальца
+//   function detectSwipe() {
+//     isSwiping = true; // Пользователь двигается — это свайп
+//     iframe.style.pointerEvents = "none"; // Отключаем iframe для свайпа
+//   }
 
-  // Обработка завершения взаимодействия
-  slider.addEventListener("mouseup", endInteraction);
-  slider.addEventListener("touchend", endInteraction);
+//   // Обработка завершения взаимодействия
+//   slider.addEventListener("mouseup", endInteraction);
+//   slider.addEventListener("touchend", endInteraction);
 
-  function endInteraction(event) {
-    slider.removeEventListener("mousemove", detectSwipe); // Прекращаем отслеживать движение
-    slider.removeEventListener("touchmove", detectSwipe);
+//   function endInteraction(event) {
+//     slider.removeEventListener("mousemove", detectSwipe); // Прекращаем отслеживать движение
+//     slider.removeEventListener("touchmove", detectSwipe);
 
-    if (!isSwiping) {
-      // Если это был клик/тап, а не свайп
-      iframe.style.pointerEvents = "auto"; // Включаем взаимодействие с iframe
+//     if (!isSwiping) {
+//       // Если это был клик/тап, а не свайп
+//       iframe.style.pointerEvents = "auto"; // Включаем взаимодействие с iframe
 
-      // Программная эмуляция пользовательского взаимодействия
-      simulateUserClick(iframe);
+//       // Программная эмуляция пользовательского взаимодействия
+//       simulateUserClick(iframe);
 
-      clearTimeout(timer);
-      timer = setTimeout(() => {
-        iframe.style.pointerEvents = "none"; // Возвращаем свайп через 3 секунды
-      }, 3000);
-    }
-  }
+//       clearTimeout(timer);
+//       timer = setTimeout(() => {
+//         iframe.style.pointerEvents = "none"; // Возвращаем свайп через 3 секунды
+//       }, 3000);
+//     }
+//   }
 
-  function simulateUserClick(element) {
-    // Создаем новое событие клика
-    const clickEvent = new MouseEvent("click", {
-      bubbles: true,
-      cancelable: true,
-      view: window,
-    });
-    element.dispatchEvent(clickEvent); // Генерируем событие на элементе
-  }
-});
+//   function simulateUserClick(element) {
+//     // Создаем новое событие клика
+//     const clickEvent = new MouseEvent("click", {
+//       bubbles: true,
+//       cancelable: true,
+//       view: window,
+//     });
+//     element.dispatchEvent(clickEvent); // Генерируем событие на элементе
+//   }
+// });
 
 // ТЕСТ
 // Находим элемент

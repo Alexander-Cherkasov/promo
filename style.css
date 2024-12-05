@@ -329,7 +329,7 @@ body {
     height: calc(100vh - 65px);
   } */
 .header {
-  padding: 0.59vw 2.08vw 0.59vw 0.78vw;
+  padding: 0.59vw 2.08vw 0.59vw 0.98vw;
   background: #ffffff;
   height: 2.12vw;
   position: fixed;
@@ -720,28 +720,28 @@ a.about-block__blue-link {
     animation: textShow forwards 0.1s;
   }
   .about-block-link-hvr:hover a:nth-child(2) {
-    animation: textShow forwards 0.3s;
+    animation: textShow forwards 0.15s;
   }
   .about-block-link-hvr:hover a:nth-child(3) {
-    animation: textShow forwards 0.6s;
+    animation: textShow forwards 0.2s;
   }
   .about-block-link-hvr:hover a:nth-child(4) {
-    animation: textShow forwards 0.9s;
+    animation: textShow forwards 0.25s;
   }
   .about-block-link-hvr:hover a:nth-child(5) {
-    animation: textShow forwards 1.2s;
+    animation: textShow forwards 0.3s;
   }
   .about-block-link-hvr:hover a:nth-child(6) {
-    animation: textShow forwards 1.5s;
+    animation: textShow forwards 0.35s;
   }
   .about-block-link-hvr:hover a:nth-child(7) {
-    animation: textShow forwards 1.8s;
+    animation: textShow forwards 0.4s;
   }
   .about-block-link-hvr:hover #about-block-link-Banka {
-    animation: textShow forwards 1.5s;
+    animation: textShow forwards 0.45s;
   }
   .about-block-link-hvr:hover #about-block-link-Slawine {
-    animation: textShow forwards 1.8s;
+    animation: textShow forwards 0.5s;
   }
   @keyframes textShow {
     0% {
@@ -769,7 +769,7 @@ a.about-block__blue-link {
     cursor: none;
   }
   .container-slider__item-text {
-    flex: 0 0 24.12vw;
+    flex: 0 0 23vw;
     font-size: 0.81vw;
     line-height: 0.98vw;
     /* gap: 0.81vw; */
@@ -796,6 +796,11 @@ a.about-block__blue-link {
     top: 1.04vw;
     font-size: 0.81vw;
   }
+  #slider-3   .container-slider__title {
+    left: 0.98vw;
+    top: 1.04vw;
+    font-size: 0.81vw;
+  }
   .container-slider__title svg {
     width: 0.94vw;
     height: 0.49vw;
@@ -811,14 +816,14 @@ a.about-block__blue-link {
     top: 0.59vw;
   }
   .about-block__img {
-    padding: 1.01vw 1.01vw 0.33vw 0vw;
+    padding: 0.61vw 1.01vw 0.33vw 0vw;
     flex: 0 0 15.66vw;
   }
   .about-block__img::after,
   .about-block__text-wrap_line::after {
     width: 1px;
     height: calc(100vh - 3.13vw);
-    top: 0.49vw;
+    top: 0.57vw;
   }
   .about-block__text-wrap {
     padding: 0.49vw 1.01vw 0.33vw 1.01vw;
@@ -929,7 +934,7 @@ a.about-block__blue-link {
     max-height: fit-content;
   }
   #slider-2 .container-slider__item-text-mobile-wrap-over {
-    margin-bottom: 0.59vw;
+    margin-bottom: 1vw;
   }
   .container-slider__item-text::before,
   .container-slider__item-text::after {
@@ -971,9 +976,6 @@ a.about-block__blue-link {
   #slider-2 .container-slider__item-text-item .item-text-item__websitet {
     margin-top: 3.02vw;
   }
-  .item-text-item__website .item-text-item-subtitle-link{
-    text-decoration: underline;
-  }
   .about-block-tabe__line {
     display: flex;
     gap: 1.92vw;
@@ -1014,7 +1016,7 @@ a.about-block__blue-link {
   }
   .container-slider__item-text {
     flex: 1 0 100%;
-    padding-top: 19.74vw;
+    padding-top: 21.74vw;
     padding-bottom: 7.25vw;
   }
   .container-slider__item-text-mobile-wrap {
@@ -1024,7 +1026,7 @@ a.about-block__blue-link {
     position: relative;
     overflow: scroll;
     -webkit-overflow-scrolling: touch;
-    padding-top: 4.83vw;
+    padding-top: 3.83vw;
     padding-bottom: 3.62vw;
   }
   .container-slider__item-text-mobile-wrap-over {
@@ -1075,7 +1077,7 @@ a.about-block__blue-link {
   .header {
     align-items: center;
     height: 10.75vw;
-    padding: 2.9vw 3.86vw;
+    padding: 2.9vw 2.46vw;
     display: flex;
   }
   .logo {
@@ -1309,3 +1311,4 @@ a.about-block__blue-link {
   pointer-events: none; /* Отключено по умолчанию */
   transition: pointer-events 0.3s ease-in-out;
 }
+
