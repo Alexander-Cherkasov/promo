@@ -1,7 +1,7 @@
 @font-face {
   font-family: "favorit";
-  src: url("./font/1ABCFavoritCYR-Regular-Trial.woff") format("woff"),
-    url("./font/1ABCFavoritCYR-Regular-Trial.woff2") format("woff2");
+  src: url("./font/test.woff") format("woff"),
+    url("./font/test.woff2") format("woff2");
   font-style: normal;
   font-weight: normal;
   font-feature-settings: "ss05" 1;
