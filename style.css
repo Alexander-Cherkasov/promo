@@ -706,7 +706,14 @@ a.about-block__blue-link {
 .scroll-top-prj {
   scroll-margin-top: 2.12vw;
 }
+.main-frame-pc__prev, 
+.main-frame-mob__prev {
+  display: none !important;
+}
 @media (min-width: 1300px) {
+  .main-frame-pc__prev {
+    display: block !important;
+  }
   .about-block-link-hvr:hover br {
     display: block;
   }
@@ -792,11 +799,6 @@ a.about-block__blue-link {
     display: flex;
   }
   .container-slider__title {
-    left: 1.3vw;
-    top: 1.04vw;
-    font-size: 0.81vw;
-  }
-  #slider-3   .container-slider__title {
     left: 0.98vw;
     top: 1.04vw;
     font-size: 0.81vw;
@@ -812,7 +814,7 @@ a.about-block__blue-link {
     display: grid;
   }
   .language-btns {
-    right: 0.72vw;
+    right: 0.98vw;
     top: 0.59vw;
   }
   .about-block__img {
@@ -933,6 +935,7 @@ a.about-block__blue-link {
     overflow: hidden;
     max-height: fit-content;
   }
+  #slider-1 .container-slider__item-text-mobile-wrap-over,
   #slider-2 .container-slider__item-text-mobile-wrap-over {
     margin-bottom: 1vw;
   }
@@ -965,6 +968,12 @@ a.about-block__blue-link {
   }
 }
 @media (max-width: 1300px) {
+  .main-frame-mob__prev {
+    display: block !important;
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+  }
   .scroll-top-prj {
     scroll-margin-top: 10.75vw;
   }
@@ -1311,4 +1320,3 @@ a.about-block__blue-link {
   pointer-events: none; /* Отключено по умолчанию */
   transition: pointer-events 0.3s ease-in-out;
 }
-
