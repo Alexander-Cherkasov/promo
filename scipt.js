@@ -235,6 +235,18 @@ if (window.innerWidth > 1300) {
         cursor.innerHTML = ""; // Очистка содержимого
       });
     });
+    document.querySelectorAll(".container-slider__title").forEach((element) => {
+      console.log(element);
+
+      element.addEventListener("mouseenter", function () {
+        cursor.innerHTML = '<div class="bounce-cursor"></div>';
+        cursor.style.display = "block";
+      });
+      element.addEventListener("mouseleave", function () {
+        cursor.style.display = "none";
+        cursor.innerHTML = ""; // Очистка содержимого
+      });
+    });
   });
 }
 
