@@ -824,11 +824,11 @@ a.about-block__blue-link {
   .about-block__img::after,
   .about-block__text-wrap_line::after {
     width: 1px;
-    height: calc(100vh - 3.13vw);
-    top: 0.6vw;
+    height: calc(100vh - 3.6vw);
+    top: 1vw;
   }
   .about-block__text-wrap {
-    padding: 1.01vw 1.01vw 0.33vw 1.01vw;
+    padding: 0.9vw 1.01vw 0.33vw 1.01vw;
     flex: 0 0 33.33vw;
   }
   .about-block__text-item,
@@ -837,7 +837,7 @@ a.about-block__blue-link {
   }
   .about-block__text-wrap-dx2 {
     gap: 2.02vw;
-    padding: 1.01vw 1.01vw 0.33vw 1.07vw;
+    padding: 0.9vw 1.01vw 0.33vw 1.07vw;
     display: flex;
   }
   .about-block__text-wrap-dx2 .about-block__text-wrap:first-child {
