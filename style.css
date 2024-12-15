@@ -1213,6 +1213,8 @@ a.about-block__blue-link {
   .psevdo-nav__leng {
     font-size: 9.78vw;
     line-height: 120%;
+    text-decoration: none;
+    color: #000000;
   }
   .main,
   .main-content {
