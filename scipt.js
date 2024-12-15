@@ -212,7 +212,7 @@ if (window.innerWidth > 1300) {
     });
     // Обработчики для элементов .container-slider__item
     document.querySelectorAll(".container-slider__item").forEach((element) => {
-      console.log(element);
+
 
       element.addEventListener("mouseenter", function () {
         cursor.innerHTML = '<div class="bounce-cursor"></div>';
@@ -224,7 +224,7 @@ if (window.innerWidth > 1300) {
       });
     });
     document.querySelectorAll(".header").forEach((element) => {
-      console.log(element);
+   
 
       element.addEventListener("mouseenter", function () {
         cursor.innerHTML = '<div class="bounce-cursor"></div>';
@@ -236,7 +236,7 @@ if (window.innerWidth > 1300) {
       });
     });
     document.querySelectorAll(".container-slider__title").forEach((element) => {
-      console.log(element);
+
 
       element.addEventListener("mouseenter", function () {
         cursor.innerHTML = '<div class="bounce-cursor"></div>';
