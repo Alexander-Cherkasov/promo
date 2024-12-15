@@ -711,6 +711,9 @@ a.about-block__blue-link {
   display: none !important;
 }
 @media (min-width: 1300px) {
+  .en-lg a.header__link.header__link_call {
+    padding-left: .24vw;
+  }
   .main-frame-pc__prev {
     display: block !important;
   }
