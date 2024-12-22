@@ -92,56 +92,58 @@ if (window.innerWidth > 1300) {
 // Бесконечность
 
 // СКРОЛЛ
-let isTouchingScroll = false;
-
-document.addEventListener("touchstart", function () {
-  isTouchingScroll = true; // Обозначаем, что тач зажат
-});
-
-document.addEventListener("touchend", function () {
-  isTouchingScroll = false; // Обозначаем, что тач отпущен
-});
-
-document.addEventListener("scroll", function () {
-  if (isTouchingScroll) return; // Пропускаем выполнение скрипта, если тач зажат
-
-  const main = document.querySelector(".main");
-  const sliderContainerWrap = document.querySelector(".slider-container-wrap");
-  const headerHeight = document.querySelector(".header").offsetHeight;
-
-  // Проверка, если скролл страницы превышает высоту main
-  if (
-    !main.classList.contains("main__hidden") &&
-    window.scrollY > main.offsetHeight - headerHeight
-  ) {
-    // Скрываем main и смещаем sliderContainerWrap
-    main.classList.add("main__hidden");
-
-    // Проверка ширины экрана и установка значения top
-    if (window.innerWidth <= 1300) {
-      sliderContainerWrap.style.top = "10.75vw";
-    } else {
-      sliderContainerWrap.style.top = "2.12vw";
+if (window.innerWidth > 1300) {
+  let isTouchingScroll = false;
+  
+  document.addEventListener("touchstart", function () {
+    isTouchingScroll = true; // Обозначаем, что тач зажат
+  });
+  
+  document.addEventListener("touchend", function () {
+    isTouchingScroll = false; // Обозначаем, что тач отпущен
+  });
+  
+  document.addEventListener("scroll", function () {
+    if (isTouchingScroll) return; // Пропускаем выполнение скрипта, если тач зажат
+  
+    const main = document.querySelector(".main");
+    const sliderContainerWrap = document.querySelector(".slider-container-wrap");
+    const headerHeight = document.querySelector(".header").offsetHeight;
+  
+    // Проверка, если скролл страницы превышает высоту main
+    if (
+      !main.classList.contains("main__hidden") &&
+      window.scrollY > main.offsetHeight - headerHeight
+    ) {
+      // Скрываем main и смещаем sliderContainerWrap
+      main.classList.add("main__hidden");
+  
+      // Проверка ширины экрана и установка значения top
+      if (window.innerWidth <= 1300) {
+        sliderContainerWrap.style.top = "10.75vw";
+      } else {
+        sliderContainerWrap.style.top = "2.12vw";
+      }
+  
+      // Мгновенно прокручиваем страницу к позиции 2.12vw или 89px
+  
+      if (window.innerWidth <= 1300) {
+        window.scrollTo(0, 0);
+      } else {
+        const scrollTopValue = (2.12 / 100) * window.innerWidth; // Перевод 2.12vw в пиксели
+        window.scrollTo(0, scrollTopValue);
+      }
+  
+      // Зафиксировать прокрутку страницы
+      document.body.style.overflow = "hidden";
+  
+      setTimeout(() => {
+        // Снимаем фиксацию прокрутки после завершения анимации
+        document.body.style.overflow = "";
+      }, 500); // Задержка на время анимации
     }
-
-    // Мгновенно прокручиваем страницу к позиции 2.12vw или 89px
-
-    if (window.innerWidth <= 1300) {
-      window.scrollTo(0, 0);
-    } else {
-      const scrollTopValue = (2.12 / 100) * window.innerWidth; // Перевод 2.12vw в пиксели
-      window.scrollTo(0, scrollTopValue);
-    }
-
-    // Зафиксировать прокрутку страницы
-    document.body.style.overflow = "hidden";
-
-    setTimeout(() => {
-      // Снимаем фиксацию прокрутки после завершения анимации
-      document.body.style.overflow = "";
-    }, 500); // Задержка на время анимации
-  }
-});
+  });
+}
 
 // СКРОЛЛ
 document.querySelector("#anch-pj-to").addEventListener("click", function () {
