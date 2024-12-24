@@ -67,7 +67,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Скрипт для бесконечного скролла работает только на разрешении более 1300px
 if (window.innerWidth > 1300) {
+  // Флаг для отслеживания состояния main__hidden
+  let isMainHidden = false;
+
+  // Первая часть: бесконечный скролл, активируется только если main__hidden есть
   document.addEventListener("scroll", () => {
+    if (!isMainHidden) return; // Если main__hidden нет, пропускаем выполнение
+
     const sliderContainer = document.querySelector(".slider-container");
     const sliderItems = sliderContainer.children;
     const containerHeight = sliderContainer.scrollHeight;
@@ -88,28 +94,15 @@ if (window.innerWidth > 1300) {
       window.scrollTo(0, sliderItems[0].offsetHeight); // Корректируем позицию скролла
     }
   });
-}
-// Бесконечность
 
-// СКРОЛЛ
-if (window.innerWidth > 1300) {
-  let isTouchingScroll = false;
-  
-  document.addEventListener("touchstart", function () {
-    isTouchingScroll = true; // Обозначаем, что тач зажат
-  });
-  
-  document.addEventListener("touchend", function () {
-    isTouchingScroll = false; // Обозначаем, что тач отпущен
-  });
-  
+  // Вторая часть: управление main__hidden
   document.addEventListener("scroll", function () {
-    if (isTouchingScroll) return; // Пропускаем выполнение скрипта, если тач зажат
-  
     const main = document.querySelector(".main");
-    const sliderContainerWrap = document.querySelector(".slider-container-wrap");
+    const sliderContainerWrap = document.querySelector(
+      ".slider-container-wrap"
+    );
     const headerHeight = document.querySelector(".header").offsetHeight;
-  
+
     // Проверка, если скролл страницы превышает высоту main
     if (
       !main.classList.contains("main__hidden") &&
@@ -117,26 +110,26 @@ if (window.innerWidth > 1300) {
     ) {
       // Скрываем main и смещаем sliderContainerWrap
       main.classList.add("main__hidden");
-  
+      isMainHidden = true; // Обновляем состояние
+
       // Проверка ширины экрана и установка значения top
       if (window.innerWidth <= 1300) {
         sliderContainerWrap.style.top = "10.75vw";
       } else {
         sliderContainerWrap.style.top = "2.12vw";
       }
-  
+
       // Мгновенно прокручиваем страницу к позиции 2.12vw или 89px
-  
       if (window.innerWidth <= 1300) {
         window.scrollTo(0, 0);
       } else {
         const scrollTopValue = (2.12 / 100) * window.innerWidth; // Перевод 2.12vw в пиксели
         window.scrollTo(0, scrollTopValue);
       }
-  
+
       // Зафиксировать прокрутку страницы
       document.body.style.overflow = "hidden";
-  
+
       setTimeout(() => {
         // Снимаем фиксацию прокрутки после завершения анимации
         document.body.style.overflow = "";
@@ -214,8 +207,6 @@ if (window.innerWidth > 1300) {
     });
     // Обработчики для элементов .container-slider__item
     document.querySelectorAll(".container-slider__item").forEach((element) => {
-
-
       element.addEventListener("mouseenter", function () {
         cursor.innerHTML = '<div class="bounce-cursor"></div>';
         cursor.style.display = "block";
@@ -226,8 +217,6 @@ if (window.innerWidth > 1300) {
       });
     });
     document.querySelectorAll(".header").forEach((element) => {
-   
-
       element.addEventListener("mouseenter", function () {
         cursor.innerHTML = '<div class="bounce-cursor"></div>';
         cursor.style.display = "block";
@@ -238,8 +227,6 @@ if (window.innerWidth > 1300) {
       });
     });
     document.querySelectorAll(".container-slider__title").forEach((element) => {
-
-
       element.addEventListener("mouseenter", function () {
         cursor.innerHTML = '<div class="bounce-cursor"></div>';
         cursor.style.display = "block";
