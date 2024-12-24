@@ -294,66 +294,55 @@ setInterval(updateMoscowTime, 60000); // Обновление каждую ми�
 // Получаем все слайдеры и их iframes
 const sliders = document.querySelectorAll("#slider-2, #slider-5");
 
-// sliders.forEach((slider) => {
-//   const iframe = slider.querySelector(".swipe-frame"); // iframe внутри текущего слайдера
-//   let isSwiping = false; // Флаг для определения свайпа
-//   let timer;
-
-//   // Обработка начала касания/нажатия
-//   slider.addEventListener("touchstart", startInteraction, { passive: true });
-//   slider.addEventListener("mousedown", startInteraction);
-
-//   function startInteraction(event) {
-//     isSwiping = false; // Сбрасываем флаг свайпа
-//     clearTimeout(timer); // Сбрасываем таймер
-//     slider.addEventListener("mousemove", detectSwipe); // Отслеживаем движение мыши
-//     slider.addEventListener("touchmove", detectSwipe, { passive: true });
-//   }
-
-//   // Обработка движения мыши/пальца
-//   function detectSwipe() {
-//     isSwiping = true; // Пользователь двигается — это свайп
-//     iframe.style.pointerEvents = "none"; // Отключаем iframe для свайпа
-//   }
-
-//   // Обработка завершения взаимодействия
-//   slider.addEventListener("mouseup", endInteraction);
-//   slider.addEventListener("touchend", endInteraction);
-
-//   function endInteraction(event) {
-//     slider.removeEventListener("mousemove", detectSwipe); // Прекращаем отслеживать движение
-//     slider.removeEventListener("touchmove", detectSwipe);
-
-//     if (!isSwiping) {
-//       // Если это был клик/тап, а не свайп
-//       iframe.style.pointerEvents = "auto"; // Включаем взаимодействие с iframe
-
-//       // Программная эмуляция пользовательского взаимодействия
-//       simulateUserClick(iframe);
-
-//       clearTimeout(timer);
-//       timer = setTimeout(() => {
-//         iframe.style.pointerEvents = "none"; // Возвращаем свайп через 3 секунды
-//       }, 3000);
-//     }
-//   }
-
-//   function simulateUserClick(element) {
-//     // Создаем новое событие клика
-//     const clickEvent = new MouseEvent("click", {
-//       bubbles: true,
-//       cancelable: true,
-//       view: window,
-//     });
-//     element.dispatchEvent(clickEvent); // Генерируем событие на элементе
-//   }
-// });
-
 // ТЕСТ
-// Находим элемент
+
 
 document.querySelector("#anch-pj-to").addEventListener("click", function () {
   setTimeout(this.click(), 50);
 });
+
+
+(async function redirectBasedOnLocation() {
+  try {
+      // Проверяем, есть ли пользовательский выбор в localStorage
+      const userPreference = localStorage.getItem("siteVersion");
+
+      if (userPreference) {
+          // Если пользователь уже выбрал версию, перенаправляем на нее
+          window.location.href = userPreference;
+          return;
+      }
+
+      // Если пользовательский выбор отсутствует, определяем страну
+      const response = await fetch("https://ip-api.com/json/");
+      const data = await response.json();
+
+      // Логика перенаправления на основе геолокации
+      if (data.countryCode === "RU") {
+          // Сохраняем предпочтение и перенаправляем
+          localStorage.setItem("siteVersion", "https://www.cherkasov.design/");
+          window.location.href = "https://www.cherkasov.design/";
+      } else {
+          // Сохраняем предпочтение и перенаправляем
+          localStorage.setItem("siteVersion", "https://www.cherkasov.design/en/");
+          window.location.href = "https://www.cherkasov.design/en/";
+      }
+  } catch (error) {
+      console.error("Не удалось определить местоположение:", error);
+      // Если ошибка, оставляем текущую страницу или задаем URL по умолчанию
+      window.location.href = "https://www.cherkasov.design/";
+  }
+})();
+
+// Функция для ручного переключения версии сайта
+function switchSiteVersion(version) {
+  if (version === "ru") {
+      localStorage.setItem("siteVersion", "https://www.cherkasov.design/");
+      window.location.href = "https://www.cherkasov.design/";
+  } else if (version === "en") {
+      localStorage.setItem("siteVersion", "https://www.cherkasov.design/en/");
+      window.location.href = "https://www.cherkasov.design/en/";
+  }
+}
 
 // ТЕСТ
