@@ -303,3 +303,22 @@ document.querySelector("#anch-pj-to").addEventListener("click", function () {
 
 
 // ТЕСТ
+document.addEventListener('DOMContentLoaded', () => {
+  // Найти все видео с классом 'responsive-video'
+  const videos = document.querySelectorAll('video');
+
+  // Определить, какое видео загружать в зависимости от ширины экрана
+  const isDesktop = window.innerWidth >= 1300;
+
+  videos.forEach(video => {
+      // Установить нужный источник
+      const src = isDesktop 
+          ? video.getAttribute('data-desktop-src') 
+          : video.getAttribute('data-mobile-src');
+      
+      if (src) {
+          video.src = src;
+          video.load(); // Загрузить видео с новым источником
+      }
+  });
+});
