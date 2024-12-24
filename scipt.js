@@ -302,47 +302,4 @@ document.querySelector("#anch-pj-to").addEventListener("click", function () {
 });
 
 
-(async function redirectBasedOnLocation() {
-  try {
-      // Проверяем, есть ли пользовательский выбор в localStorage
-      const userPreference = localStorage.getItem("siteVersion");
-
-      if (userPreference) {
-          // Если пользователь уже выбрал версию, перенаправляем на нее
-          window.location.href = userPreference;
-          return;
-      }
-
-      // Если пользовательский выбор отсутствует, определяем страну
-      const response = await fetch("https://ip-api.com/json/");
-      const data = await response.json();
-
-      // Логика перенаправления на основе геолокации
-      if (data.countryCode === "RU") {
-          // Сохраняем предпочтение и перенаправляем
-          localStorage.setItem("siteVersion", "https://www.cherkasov.design/");
-          window.location.href = "https://www.cherkasov.design/";
-      } else {
-          // Сохраняем предпочтение и перенаправляем
-          localStorage.setItem("siteVersion", "https://www.cherkasov.design/en/");
-          window.location.href = "https://www.cherkasov.design/en/";
-      }
-  } catch (error) {
-      console.error("Не удалось определить местоположение:", error);
-      // Если ошибка, оставляем текущую страницу или задаем URL по умолчанию
-      window.location.href = "https://www.cherkasov.design/";
-  }
-})();
-
-// Функция для ручного переключения версии сайта
-function switchSiteVersion(version) {
-  if (version === "ru") {
-      localStorage.setItem("siteVersion", "https://www.cherkasov.design/");
-      window.location.href = "https://www.cherkasov.design/";
-  } else if (version === "en") {
-      localStorage.setItem("siteVersion", "https://www.cherkasov.design/en/");
-      window.location.href = "https://www.cherkasov.design/en/";
-  }
-}
-
 // ТЕСТ
