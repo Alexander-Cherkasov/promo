@@ -322,3 +322,22 @@ document.addEventListener('DOMContentLoaded', () => {
       }
   });
 });
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Check if the redirect has already occurred in this session
+  if (!sessionStorage.getItem("redirected")) {
+      const userLanguage = navigator.language || navigator.userLanguage;
+      const isRussian = userLanguage.startsWith("ru");
+
+      // Redirect based on language
+      if (isRussian) {
+          window.location.href = "https://www.cherkasov.design/";
+      } else {
+          window.location.href = "https://www.cherkasov.design/en/";
+      }
+
+      // Mark as redirected in sessionStorage
+      sessionStorage.setItem("redirected", "true");
+  }
+});
