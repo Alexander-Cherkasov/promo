@@ -70,7 +70,8 @@ if (window.innerWidth > 300) {
   // Флаг для отслеживания состояния main__hidden
   let isMainHidden = false;
 
-  // Первая часть: бесконечный скролл, активируется только если main__hidden есть
+  if(window.innerWidth > 1300) {
+      // Первая часть: бесконечный скролл, активируется только если main__hidden есть
   document.addEventListener("scroll", () => {
     if (!isMainHidden) return; // Если main__hidden нет, пропускаем выполнение
 
@@ -94,6 +95,7 @@ if (window.innerWidth > 300) {
       window.scrollTo(0, sliderItems[0].offsetHeight); // Корректируем позицию скролла
     }
   });
+  }
 
   // Вторая часть: управление main__hidden
   document.addEventListener("scroll", function () {
