@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // Скрипт для бесконечного скролла работает только на разрешении более 1300px
-if (window.innerWidth > 1300) {
+if (window.innerWidth > 300) {
   // Флаг для отслеживания состояния main__hidden
   let isMainHidden = false;
 
