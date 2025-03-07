@@ -861,6 +861,13 @@ a.about-block__blue-link {
   .about-block__text-item,
   .about-block__img_time {
     font-size: 0.59vw;
+    font-size: 0.81vw;
+    line-height: 0.98vw;
+  }
+  .en-lg .about-block__text-item,
+  .en-lg .about-block__img_time {
+    font-size: 0.59vw;
+    line-height: 120%;
   }
   .about-block__text-wrap-dx2 {
     gap: 2.02vw;
