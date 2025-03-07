@@ -492,6 +492,11 @@ span.header__link.header__link_project {
   text-decoration: none;
   cursor: pointer;
 }
+@media (min-width: 1300px) {
+  .about-block-link-hvr {
+    white-space: nowrap;
+  }
+}
 .about-block-link-nontt {
   text-decoration: none;
 }
@@ -762,6 +767,9 @@ a.about-block__blue-link {
   }
   .about-block-link-hvr:hover a:nth-child(7) {
     animation: textShow forwards 0.4s;
+  }
+  .about-block-link-hvr:hover #about-block-link-Momoloko {
+    animation: textShow forwards 0.42s;
   }
   .about-block-link-hvr:hover #about-block-link-Banka {
     animation: textShow forwards 0.45s;
