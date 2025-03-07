@@ -338,8 +338,6 @@ document.addEventListener("DOMContentLoaded", function () {
       } else {
           window.location.href = "https://www.cherkasov.design/en/";
       }
-
-      // Mark as redirected in sessionStorage
       sessionStorage.setItem("redirected", "true");
   }
 });
