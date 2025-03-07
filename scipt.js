@@ -305,25 +305,72 @@ document.querySelector("#anch-pj-to").addEventListener("click", function () {
 
 
 // ТЕСТ
+// document.addEventListener('DOMContentLoaded', () => {
+//   // Найти все видео с классом 'responsive-video'
+//   const videos = document.querySelectorAll('video');
+
+//   // Определить, какое видео загружать в зависимости от ширины экрана
+//   const isDesktop = window.innerWidth >= 1300;
+
+//   videos.forEach(video => {
+//       // Установить нужный источник
+//       const src = isDesktop 
+//           ? video.getAttribute('data-desktop-src') 
+//           : video.getAttribute('data-mobile-src');
+      
+//       if (src) {
+//           video.src = src;
+//           video.load(); // Загрузить видео с новым источником
+//       }
+//   });
+// });
+
 document.addEventListener('DOMContentLoaded', () => {
-  // Найти все видео с классом 'responsive-video'
   const videos = document.querySelectorAll('video');
 
-  // Определить, какое видео загружать в зависимости от ширины экрана
-  const isDesktop = window.innerWidth >= 1300;
+  // Проверяем поддержку Intersection Observer
+  if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver((entries, observer) => {
+          entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                  const video = entry.target;
+                  
+                  // Проверяем, загружено ли уже видео
+                  if (!video.src) {
+                      const isDesktop = window.innerWidth >= 1300;
+                      const src = isDesktop 
+                          ? video.getAttribute('data-desktop-src') 
+                          : video.getAttribute('data-mobile-src');
 
-  videos.forEach(video => {
-      // Установить нужный источник
-      const src = isDesktop 
-          ? video.getAttribute('data-desktop-src') 
-          : video.getAttribute('data-mobile-src');
-      
-      if (src) {
-          video.src = src;
-          video.load(); // Загрузить видео с новым источником
-      }
-  });
+                      if (src) {
+                          video.src = src;
+                          video.load(); // Загружаем видео
+                      }
+                  }
+
+                  observer.unobserve(video); // Отключаем наблюдение после загрузки
+              }
+          });
+      }, { threshold: 0.01 }); // 1% видео должно попасть в экран
+
+      // Наблюдаем за всеми видео на странице
+      videos.forEach(video => observer.observe(video));
+  } else {
+      // Фолбэк для старых браузеров без IntersectionObserver
+      videos.forEach(video => {
+          const isDesktop = window.innerWidth >= 1300;
+          const src = isDesktop 
+              ? video.getAttribute('data-desktop-src') 
+              : video.getAttribute('data-mobile-src');
+
+          if (src) {
+              video.src = src;
+              video.load();
+          }
+      });
+  }
 });
+
 
 
 document.addEventListener("DOMContentLoaded", function () {
